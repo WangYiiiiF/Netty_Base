@@ -28,8 +28,6 @@ public class Client {
                             public void channelRead(ChannelHandlerContext ctx, Object msg) {
                                 ByteBuf buffer = (ByteBuf) msg;
                                 System.out.println(buffer.toString(Charset.defaultCharset()));
-
-                                // 思考：需要释放 buffer 吗
                             }
                         });
                     }

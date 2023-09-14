@@ -28,9 +28,6 @@ public class Server {
                                 ByteBuf response = ctx.alloc().buffer();
                                 response.writeBytes(buffer);
                                 ctx.writeAndFlush(response);
-
-                                // 思考：需要释放 buffer 吗
-                                // 思考：需要释放 response 吗
                             }
                         });
                     }
