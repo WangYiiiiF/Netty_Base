@@ -13,8 +13,8 @@ import io.netty.handler.logging.LoggingHandler;
 
 public class Server {
     public static void main(String[] args) {
-        EventLoopGroup bossGroup = new NioEventLoopGroup(); // BossGroup
-        EventLoopGroup workerGroup = new NioEventLoopGroup(); // WorkerGroup
+        EventLoopGroup bossGroup = new NioEventLoopGroup(1); // BossGroup
+        EventLoopGroup workerGroup = new NioEventLoopGroup(2); // WorkerGroup
         // 1. 启动器，负责组装 netty 组件，启动服务器
         new ServerBootstrap()
                 // 2. BossEventLoop, WorkerEventLoop(selector,thread), group 组
